@@ -1,7 +1,61 @@
 // TODO: Include packages needed for this application
+let inquires = require("inquires"); 
+let fs = require("fs");
+let path = require("path");
+let generateMD = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    {
+        type: "input",
+        name: "title",
+        message: " provide project title"
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "provide project description"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "provide email for contact information"
+    }, 
+    {
+        type: "input",
+        name: "github",
+        message: "provide github"
+    }, 
+    {
+        type: "list",
+        name: "license",
+        message: "choose license",
+        choices: ["BSD 3", "MIT", 'APACHE 2.0', "GPL 3.0", "NONE"]
+    }, 
+    {
+        type: "input",
+        name: "instalation",
+        message: "provide instalation instruction"
+    }, 
+    {
+        type: "input",
+        name: "usage",
+        message: "provide instruction for usage"
+    }, 
+    {
+        type: "input",
+        name: "test",
+        message: "provide how to run test"
+    }, 
+    {
+        type: "input",
+        name: "contributing",
+        message: "provide instruction on how to contribute"
+    }
+
+];
+
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
