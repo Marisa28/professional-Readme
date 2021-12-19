@@ -3,6 +3,8 @@ let inquires = require("inquires");
 let fs = require("fs");
 let path = require("path");
 let generateMD = require("./utils/generateMarkdown");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -58,10 +60,16 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFileSync(part.join(process.cwd(),fileName), data);
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt (questions).then(response => {
+        writeToFile("generatedReadMe.md", generateMarkdown({ ...response}));
+    });
+}
 
 // Function call to initialize app
 init();
