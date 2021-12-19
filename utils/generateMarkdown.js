@@ -30,7 +30,25 @@ ${data.description}
 
 * [Questions](#questions)
 
+## Installation 
 
+${data.installation}
+
+##Usage
+
+${data.usage}
+
+##Contributing
+
+${data.contributing}
+
+##Tests
+
+${data.tests}
+
+##Questions
+
+ For any questions about this Repo contact me at my email ${data.email}. You can find my other works at [${data.github}](https//github.com//${data.github}/).
 `;
 }
 
