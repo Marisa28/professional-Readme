@@ -32,11 +32,11 @@ const questions = [
         type: "list",
         name: "license",
         message: "choose license",
-        choices: ["BSD 3", "MIT", 'APACHE 2.0', "GPL 3.0", "NONE"]
+        choices: ["BSD 3.0", "MIT", "APACHE 2.0", "GPL 3.0", "NONE"]
     }, 
     {
         type: "input",
-        name: "instalation",
+        name: "installation",
         message: "provide instalation instruction"
     }, 
     {
@@ -46,7 +46,7 @@ const questions = [
     }, 
     {
         type: "input",
-        name: "test",
+        name: "tests",
         message: "provide how to run test"
     }, 
     {

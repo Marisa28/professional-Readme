@@ -1,18 +1,36 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if(license !== "NONE") {
+ return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  }
+  return "";
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license !== "NONE") {
+    return `\n* [APP license](#license)\n`;
+  }
+  return "";
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license !== "NONE") {
+    return `## License
+    this APP is license under the ${license} license.`;
+  }
+  return "";
+
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+${ renderLicenseBadge(data.license)}
 
 ## Description 
 
@@ -23,6 +41,7 @@ ${data.description}
 * [Installation](#installation) 
 
 * [Usage](#usage)
+${ renderLicenseLink(data.license)}
 
 * [Contributing](#contributing)
 
@@ -38,6 +57,7 @@ ${data.installation}
 
 ${data.usage}
 
+${renderLicenseSection(data.license)}
 ##Contributing
 
 ${data.contributing}
